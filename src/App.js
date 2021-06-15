@@ -1,16 +1,19 @@
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+
+import Header from './components/HeaderComponent'
+import Landing from './components/LandingComponent'
+
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <div id="logo">
-        M
-      </div>
-      <h1 className="text">MINGO</h1>
-      <h4 className="text">New to the area?</h4>
-      <button>GET STARTED</button>
-      <h5 className="accent">Founder: Harry Bethancourt</h5>
-      <span className="accent">Highrise Elite Marketing</span>
+      <Router >
+        <Header />
+        <Switch>
+          <Route exact path="/" component={Landing}/>
+        </Switch>
+      </Router>
     </div>
   );
 }
