@@ -1,7 +1,10 @@
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 
-import Header from './components/HeaderComponent'
+import Header from './components/utilities/HeaderComponent'
 import Landing from './components/LandingComponent'
+import Terms from './components/utilities/TermsComponent'
+import Login from './components/account/LoginComponent'
+import Register from './components/account/RegisterComponent'
 
 import './App.css';
 
@@ -12,6 +15,10 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/" component={Landing}/>
+          <Route path="/login" component={Login}/>
+          <Route path="/register" component={Register}/>
+          <Route path="/terms" component={Terms}/>
+          <Redirect to="/"/>
         </Switch>
       </Router>
     </div>

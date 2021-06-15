@@ -6,10 +6,10 @@ const HeaderComponent = () => {
         <div className="header">
             <div id="light-up" className="mr-3"></div>
             <span>
-                <Link to="/home" className="mr-3">Kanto</Link>
+                <Link to="/" className="mr-3">Home</Link>
             </span>
             <span>
-                <Link to="/favorites">Favorites</Link>
+                <Link to="/login">Login</Link>
             </span>
         </div>
     )

@@ -5,6 +5,20 @@
   --text: white;
 }
 
+/* HEADER */
+.header {
+  background: var(--accent);
+  color: white;
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
+}
+
 .land {
   text-align: center;
   background: var(--black);
@@ -40,4 +54,20 @@ button {
   color: white;
   font-size: 150%;
   font-weight: 300;
+}
+
+.login {
+  background: var(--black);
+  height: 95vh;
+}
+
+.login form h3 {
+  color: var(--main);
+}
+
+.login form input[type="text"], 
+.login form input[type="password"]{
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid var(--main);
 }
