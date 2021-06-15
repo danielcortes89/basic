@@ -59,6 +59,14 @@ button {
 .login {
   background: var(--black);
   height: 95vh;
+
+}
+
+.login form {
+  margin: 0 auto;
+  width: 50%;
+  padding: 3rem;
+  border: 2px solid var(--main);
 }
 
 .login form h3 {
@@ -66,8 +74,15 @@ button {
 }
 
 .login form input[type="text"], 
-.login form input[type="password"]{
+.login form input[type="password"],
+.login form input[type="select"],
+.login form input[type="date"] {
   background: transparent;
   border: 0;
   border-bottom: 2px solid var(--main);
+  margin-right: 2rem;
+}
+
+.login label {
+  color: var(--main);
 }
