@@ -6,7 +6,20 @@ const PreferencesComponent = () => {
             <form >
                 <h3 >What are your preferences?</h3>
 
-                <input type="text" placeholder="Name"/>
+                <ol>
+                    <li>How many categories?</li>
+                    <li>Search bar to find specific ones</li>
+                    <li>When clicking one, have checkboxes auto generate and be selected</li>
+                    <li>click submit to save results</li>
+                </ol>
+
+                <ul>
+                    <li>Real time search results will have to use local state</li>
+                    <li>local state will have to have an array or object that gets added on each time category is selected.</li>
+                    <li>local state for form sill be tricky.</li>
+                </ul>
+
+                {/* <input type="text" placeholder="Name"/>
 
                 <input type="date"/>
 
@@ -47,7 +60,7 @@ const PreferencesComponent = () => {
 
                     <input id="black" name="fav-color" type="checkbox"/>
                     <label htmlFor="black">Black</label>
-                </div>
+                </div> */}
             </form>
         </div>
     )
