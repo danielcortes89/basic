@@ -1,6 +1,17 @@
-import React from 'react'
+import React, {Component} from 'react'
 
-const PreferencesComponent = () => {
+class PreferencesComponent extends Component {
+    constructor(props){
+        super(props)
+        thhis.state = {
+            selectedPreferences: [
+                
+            ]
+        }
+    }
+
+    render(){
+        
     return (
         <div className="login">
             <form >
@@ -64,6 +75,7 @@ const PreferencesComponent = () => {
             </form>
         </div>
     )
+            }
 }
 
 export default PreferencesComponent;
