@@ -114,3 +114,13 @@ button {
 .register label {
   color: var(--main);
 }
+
+#status {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#status div {
+  display: flex;
+}

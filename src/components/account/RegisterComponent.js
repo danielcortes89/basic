@@ -30,20 +30,33 @@ const RegisterComponent = () => {
 
                 <input type="text" placeholder="Hometown"/>
 
-                <input type="radio" id="single"/>
-                <label htmlFor="single" name="relationship">Single</label>
+                <div id="status">
+                    <div>
+                        <input type="radio" id="single"/>
+                        <label htmlFor="single" name="relationship">Single</label>
+                    </div>
+                    
 
-                <input type="radio" id="relationship"/>
-                <label htmlFor="relationship" name="relationship">In a Relationship</label>
+                    <div>
+                        <input type="radio" id="relationship"/>
+                        <label htmlFor="relationship" name="relationship">In a Relationship</label>
+                    </div>
 
-                <input type="radio" id="married"/>
-                <label htmlFor="married" name="relationship">Married</label>
-
+                    <div>
+                        <input type="radio" id="married"/>
+                        <label htmlFor="married" name="relationship">Married</label>
+                    </div>
+                </div>
                 
-                <select>
-                    <option>Interested in</option>
-                    <option>Men</option>
-                </select>
+
+                <div className="reg-selects">
+                    <label htmlFor="orientation">Interested In:</label>
+                    <select id="orientation">
+                        <option>Interested in</option>
+                        <option>Men</option>
+                    </select>
+                </div>
+                
 
                 <div>
                     <span className="">Color</span>
