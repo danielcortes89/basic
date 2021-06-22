@@ -3,11 +3,21 @@ import React, {Component} from 'react'
 class PreferencesComponent extends Component {
     constructor(props){
         super(props)
-        thhis.state = {
+        this.state = {
+            searchingPreferences: {
+                food: [],
+                entertainment: []
+            },
             selectedPreferences: [
-                
+
             ]
         }
+    }
+
+    updatePreferences(preference){
+        this.setState({
+            // selectedPreferences.preference.name: preference
+        })
     }
 
     render(){

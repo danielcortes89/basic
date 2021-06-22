@@ -2,7 +2,7 @@ import React from 'react'
 
 const RegisterComponent = () => {
     return (
-        <div className="login">
+        <div className="register">
             <form >
                 <h3 >Tell me about yourself</h3>
 
@@ -12,15 +12,21 @@ const RegisterComponent = () => {
 
                 <input type="text" placeholder="Gender"/>
 
-                <select>
-                    <option>African</option>
-                    <option>Hispanic/Latino</option>
-                </select>
+                <div className="reg-selects">
+                    <label htmlFor="race">Race:</label>
+                    <select id="race">
+                        <option>African</option>
+                        <option>Hispanic/Latino</option>
+                    </select>
+                </div>
 
-                <select>
-                    <option>English</option>
-                    <option>Spanish</option>
-                </select>
+                <div className="reg-selects">
+                    <label htmlFor="language">Language</label>
+                    <select id="language">
+                        <option>English</option>
+                        <option>Spanish</option>
+                    </select>
+                </div>
 
                 <input type="text" placeholder="Hometown"/>
 

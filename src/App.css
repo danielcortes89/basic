@@ -12,6 +12,7 @@
   padding: 3rem;
   display: flex;
   align-items: center;
+  /* margin-bottom: 3rem; */
 }
 
 .header a {
@@ -57,13 +58,13 @@ button {
   font-weight: 300;
 }
 
-.login {
+.register {
   background: var(--black);
   height: 100vh;
-
+  padding-top: 3rem;
 }
 
-.login form {
+.register form {
   margin: 0 auto;
   width: 50%;
   padding: 3rem;
@@ -75,24 +76,41 @@ button {
   height: 80vh;
 }
 
-.login form h3 {
+.register form h3 {
   color: var(--main);
 }
 
-.login form input[type="text"], 
-.login form input[type="password"],
-.login form input[type="select"],
-.login form input[type="date"] {
+.register form input[type="text"], 
+.register form input[type="password"],
+.register form input[type="select"],
+.register form input[type="date"] {
+  width: 80%;
   background: transparent;
   border: 0;
   border-bottom: 2px solid var(--main);
   margin-right: 2rem;
 }
 
-.login form input[type="date"] {
+.reg-selects {
+  display: flex;
+  /* justify-content: space-between; */
+  width: 80%;
+}
+
+.reg-selects label {
+  margin-right: 2rem;
+}
+
+.reg-selects select {
+  width: 80%;
+  background: transparent;
   color: var(--main);
 }
 
-.login label {
+.register form input[type="date"] {
+  color: var(--main);
+}
+
+.register label {
   color: var(--main);
 }
