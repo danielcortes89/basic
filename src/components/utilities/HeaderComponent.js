@@ -14,6 +14,9 @@ const HeaderComponent = () => {
             <span>
                 <Link to="/register">Register</Link>
             </span>
+            <span>
+                <Link to="/preferences">Preferences</Link>
+            </span>
         </div>
     )
 }

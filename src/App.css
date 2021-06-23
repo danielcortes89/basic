@@ -124,3 +124,25 @@ button {
 #status div {
   display: flex;
 }
+
+
+
+details {
+  margin: 20px;
+  padding: 5px;
+  border: 2px solid black;
+  width: 50%;
+}
+
+.pref-click {
+  width: 35%;
+  height: 100px;
+  padding: 2rem;
+  margin: 2rem;
+  border: 2px solid black;
+}
+
+.blue {
+  background: rgb(13, 13, 180);
+  color: white;
+}

@@ -4,20 +4,39 @@ class PreferencesComponent extends Component {
     constructor(props){
         super(props)
         this.state = {
-            searchingPreferences: {
-                food: [],
-                entertainment: []
-            },
-            selectedPreferences: [
+            foodsTouched: false,
+            foodSelect: false,
+            musicSelect: false
+            // searchingPreferences: {
+            //     food: [],
+            //     entertainment: []
+            // },
+            // selectedPreferences: [
 
-            ]
+            // ]
         }
+
+        this.updatePreferences = this.updatePreferences.bind(this)
+        this.foodToggle = this.foodToggle.bind(this)
+        this.musicToggle = this.musicToggle.bind(this)
     }
 
-    updatePreferences(preference){
+    updatePreferences(){
         this.setState({
-            // selectedPreferences.preference.name: preference
+            foodsTouched: true
         })
+    }
+
+    foodToggle(){
+        this.setState(prevState => {
+            return {foodSelect: !prevState.foodSelect}
+        })
+    }
+
+    musicToggle(){
+        this.setState(prevState => ({
+            musicSelect: !prevState.musicSelect
+        }))
     }
 
     render(){
@@ -39,6 +58,45 @@ class PreferencesComponent extends Component {
                     <li>local state will have to have an array or object that gets added on each time category is selected.</li>
                     <li>local state for form sill be tricky.</li>
                 </ul>
+                <form>
+
+                </form>
+                <details>
+                    <summary onClick={this.updatePreferences}>
+                        Food
+                    </summary>
+                    <div>
+                        <div>
+                            <input id="indian" name="food" type="checkbox"/>
+                            <label htmlFor="indian">Indian</label>
+                        </div>
+
+                        <div>
+                            <input id="italian" name="food" type="checkbox"/>
+                            <label htmlFor="italian">Italian</label>
+                        </div>
+                    </div>
+                </details>
+
+                <h1>
+                    OR....
+                </h1>
+
+                {this.state.foodSelect && <div className="pref-click blue" onClick={this.foodToggle}>
+                    Food
+                </div>}
+
+                {!this.state.foodSelect && <div className="pref-click" onClick={this.foodToggle}>
+                    Food
+                </div>}
+
+                {this.state.musicSelect && <div className="pref-click blue" onClick={this.musicToggle}>
+                    Music
+                </div>}
+
+                {!this.state.musicSelect && <div className="pref-click" onClick={this.musicToggle}>
+                    Music
+                </div>}
 
                 {/* <input type="text" placeholder="Name"/>
 
