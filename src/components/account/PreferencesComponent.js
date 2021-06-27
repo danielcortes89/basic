@@ -13,6 +13,7 @@ class PreferencesComponent extends Component {
         this.updatePreferences = this.updatePreferences.bind(this)
         this.foodToggle = this.foodToggle.bind(this)
         this.musicToggle = this.musicToggle.bind(this)
+        this.addThing = this.addThing.bind(this)
     }
 
     updatePreferences(){
@@ -100,6 +101,12 @@ class PreferencesComponent extends Component {
                 {!this.state.musicSelect && <div className="pref-click" onClick={this.musicToggle}>
                     Music
                 </div>}
+
+                <div className="pref-click">Italian</div>
+                <div className="pref-click">Chinese</div>
+                <div className="pref-click">India</div>
+                <div className="pref-click">Japanese</div>
+                <div className="pref-click">Meditarranean</div>
 
                 {/* <input type="text" placeholder="Name"/>
 
