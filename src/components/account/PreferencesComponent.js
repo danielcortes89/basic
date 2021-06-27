@@ -6,14 +6,8 @@ class PreferencesComponent extends Component {
         this.state = {
             foodsTouched: false,
             foodSelect: false,
-            musicSelect: false
-            // searchingPreferences: {
-            //     food: [],
-            //     entertainment: []
-            // },
-            // selectedPreferences: [
-
-            // ]
+            musicSelect: false,
+            selectedThings: []
         }
 
         this.updatePreferences = this.updatePreferences.bind(this)
@@ -24,6 +18,15 @@ class PreferencesComponent extends Component {
     updatePreferences(){
         this.setState({
             foodsTouched: true
+        })
+    }
+
+    addThing(thing){
+        let newThings = this.state.selectedThings
+
+        newThings.push(thing)
+        this.setState({
+            selectedThings: newThings
         })
     }
 

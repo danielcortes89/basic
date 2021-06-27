@@ -143,6 +143,6 @@ details {
 }
 
 .blue {
-  background: rgb(13, 13, 180);
-  color: white;
+  background: var(--main);
+  color: black;
 }
