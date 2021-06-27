@@ -24,11 +24,19 @@ class PreferencesComponent extends Component {
 
     addThing(thing){
         let newThings = this.state.selectedThings
-
-        newThings.push(thing)
+        if(newThings.includes(thing)){
+            let filtered = newThings.filter(specThing => specThing !== thing)
+            this.setState({
+                selectedThings: filtered
+            })
+        } else {
+            newThings.push(thing)
         this.setState({
             selectedThings: newThings
         })
+        }
+
+        
     }
 
     foodToggle(){
