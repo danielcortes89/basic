@@ -11,12 +11,12 @@ class SingleOptionComponent extends Component {
         // this.deselectThis = this.deselectThis.bind(this)
     }
 
-    selectThis(){
+    selectThis(option){
         this.setState(prevState => {
             return { selected: !prevState.selected }
         })
 
-        // this.props.addThing(option)
+        this.props.addThing(option)
     }
 
    
@@ -24,13 +24,13 @@ class SingleOptionComponent extends Component {
     render(props) {
         if(this.state.selected){
             return (
-                <div className="blue" onClick={this.selectThis}>
+                <div className="blue" onClick={() => this.selectThis(this.props.option)}>
                     {this.props.option}!
                 </div>
             )
         } else {
             return (
-                <div className="pref-click" onClick={this.selectThis}>
+                <div className="pref-click" onClick={() => this.selectThis(this.props.option)}>
                     {this.props.option}
                 </div>
             )
