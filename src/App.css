@@ -137,14 +137,26 @@ details {
 .options {
   width: 90%;
   margin: 0 auto;
+  background: black;
+
+  padding: 1rem;
 }
 
 .pref-click {
-  width: 35%;
-  height: 100px;
-  padding: 2rem;
-  margin: 2rem;
+  width: 150px;
+  height: 50px;
+  padding: 1rem;
+  margin: 1rem;
   border: 2px solid black;
+  background: var(--main);
+  color: black;
+  border-radius: 10px;
+
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .blue {

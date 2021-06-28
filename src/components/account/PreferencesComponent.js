@@ -12,8 +12,7 @@ class PreferencesComponent extends Component {
         }
 
         this.updatePreferences = this.updatePreferences.bind(this)
-        this.foodToggle = this.foodToggle.bind(this)
-        this.musicToggle = this.musicToggle.bind(this)
+        
         this.addThing = this.addThing.bind(this)
     }
 
@@ -25,6 +24,7 @@ class PreferencesComponent extends Component {
 
     addThing(thing){
         let newThings = this.state.selectedThings
+
         if(newThings.includes(thing)){
             let filtered = newThings.filter(specThing => specThing !== thing)
             this.setState({
@@ -40,21 +40,11 @@ class PreferencesComponent extends Component {
         
     }
 
-    foodToggle(){
-        this.setState(prevState => {
-            return {foodSelect: !prevState.foodSelect}
-        })
-    }
-
-    musicToggle(){
-        this.setState(prevState => ({
-            musicSelect: !prevState.musicSelect
-        }))
-    }
-
     render(){
         const SingleOption = ({option}) => {
-            return <div className="pref-click">{option}</div>
+            return <div className="pref-click">
+                {option}
+                </div>
         }
         
     return (
@@ -77,10 +67,13 @@ class PreferencesComponent extends Component {
                 
 
                 <section className="options">
-                    {this.state.allOptions.map(option => {
-                        return <SingleOption option={option}/>
+                    {this.state.allOptions.map((option, index) => {
+                        return <SingleOption option={option} key={index} />
                     })}
                 </section>
+                <div className="pref-click">
+                TEST
+                </div>
                 
             </form>
         </div>
