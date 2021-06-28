@@ -13,11 +13,16 @@ class PreferencesComponent extends Component {
         }
 
         
-        
+        this.getAllSelections = this.getAllSelections.bind(this)
         this.addThing = this.addThing.bind(this)
         this.removeThing = this.removeThing.bind(this)
     }
 
+
+    getAllSelections = (e) => {
+        e.preventDefault()
+        console.log(this.state.selectedThings)
+    }
 
     addThing = (thing) => {
         this.setState(state => {
@@ -55,7 +60,7 @@ class PreferencesComponent extends Component {
         
     return (
         <div className="login">
-            <form >
+            <form onSubmit={this.getAllSelections}>
                 <h3 >What are your preferences?</h3>
 
                 {/* <ol>
