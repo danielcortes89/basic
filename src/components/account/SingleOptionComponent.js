@@ -8,7 +8,7 @@ class SingleOptionComponent extends Component {
         }
 
         this.selectThis = this.selectThis.bind(this)
-        // this.deselectThis = this.deselectThis.bind(this)
+        this.deselectThis = this.deselectThis.bind(this)
     }
 
     selectThis(option){
@@ -19,12 +19,20 @@ class SingleOptionComponent extends Component {
         this.props.addThing(option)
     }
 
+    deselectThis(option){
+        this.setState(prevState => {
+            return { selected: !prevState.selected }
+        })
+
+        this.props.removeThing(option)
+    }
+
    
 
     render(props) {
         if(this.state.selected){
             return (
-                <div className="blue" onClick={() => this.selectThis(this.props.option)}>
+                <div className="blue" onClick={() => this.deselectThis(this.props.option)}>
                     {this.props.option}!
                 </div>
             )
