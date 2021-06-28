@@ -134,6 +134,11 @@ details {
   width: 50%;
 }
 
+.options {
+  width: 90%;
+  margin: 0 auto;
+}
+
 .pref-click {
   width: 35%;
   height: 100px;
