@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import SingleOption from './SingleOptionComponent'
 
 class PreferencesComponent extends Component {
     constructor(props){
@@ -8,44 +9,49 @@ class PreferencesComponent extends Component {
             foodSelect: false,
             musicSelect: false,
             selectedThings: [],
-            allOptions: ['Italian', 'indian', 'Chinese', 'Japannese', 'Mexican', "Meditarranean", '']
+            allOptions: ['Italian', 'indian', 'Chinese', 'Japannese', 'Mexican', 'Meditarranean']
         }
 
-        this.updatePreferences = this.updatePreferences.bind(this)
+        
         
         this.addThing = this.addThing.bind(this)
+        this.removeThing = this.removeThing.bind(this)
     }
 
-    updatePreferences(){
-        this.setState({
-            foodsTouched: true
+
+    addThing = (thing) => {
+        this.setState(state => {
+            const selectedThings = [...state.selectedThings, thing]
+
+            return {
+                selectedThings
+            }
         })
     }
 
-    addThing(thing){
-        let newThings = this.state.selectedThings
+    removeThing = (thing) => {
+        this.setState(state => {
+            const selectedThings = state.selectedThings.filter((item) => thing !== item)
 
-        if(newThings.includes(thing)){
-            let filtered = newThings.filter(specThing => specThing !== thing)
-            this.setState({
-                selectedThings: filtered
-            })
-        } else {
-            newThings.push(thing)
-        this.setState({
-            selectedThings: newThings
+            return {
+                selectedThings
+            }
         })
-        }
-
-        
     }
 
     render(){
-        const SingleOption = ({option}) => {
-            return <div className="pref-click">
-                {option}
-                </div>
-        }
+        // const SingleOption = ({option}) => {
+        //     return <div className="pref-click">
+        //         {option}
+        //         </div>
+        // }
+        const options = this.state.allOptions.map((option, index) => {
+            return <SingleOption 
+                option={option} 
+                key={index} 
+                addThing={this.addThing}
+                removeThing={this.removeThing}/>
+        })
         
     return (
         <div className="login">
@@ -67,13 +73,12 @@ class PreferencesComponent extends Component {
                 
 
                 <section className="options">
-                    {this.state.allOptions.map((option, index) => {
-                        return <SingleOption option={option} key={index} />
-                    })}
+                    {options}
                 </section>
                 <div className="pref-click">
                 TEST
                 </div>
+                <input type="submit"/>
                 
             </form>
         </div>
