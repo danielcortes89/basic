@@ -32,13 +32,13 @@ class SingleOptionComponent extends Component {
     render(props) {
         if(this.state.selected){
             return (
-                <div className="blue" onClick={() => this.deselectThis(this.props.option)}>
+                <div className="blue col col-md-5" onClick={() => this.deselectThis(this.props.option)}>
                     {this.props.option}!
                 </div>
             )
         } else {
             return (
-                <div className="pref-click" onClick={() => this.selectThis(this.props.option)}>
+                <div className="pref-click col col-md-5" onClick={() => this.selectThis(this.props.option)}>
                     {this.props.option}
                 </div>
             )

@@ -6,8 +6,6 @@ class PreferencesComponent extends Component {
         super(props)
         this.state = {
             foodsTouched: false,
-            foodSelect: false,
-            musicSelect: false,
             selectedThings: [],
             allOptions: ['Italian', 'indian', 'Chinese', 'Japannese', 'Mexican', 'Meditarranean']
         }
@@ -22,6 +20,9 @@ class PreferencesComponent extends Component {
     getAllSelections = (e) => {
         e.preventDefault()
         console.log(this.state.selectedThings)
+        this.setState({
+            foodsTouched: true
+        })
     }
 
     addThing = (thing) => {
@@ -45,11 +46,6 @@ class PreferencesComponent extends Component {
     }
 
     render(){
-        // const SingleOption = ({option}) => {
-        //     return <div className="pref-click">
-        //         {option}
-        //         </div>
-        // }
         const options = this.state.allOptions.map((option, index) => {
             return <SingleOption 
                 option={option} 
@@ -59,30 +55,23 @@ class PreferencesComponent extends Component {
         })
         
     return (
-        <div className="login">
+        <div className="login container">
+            {this.state.foodsTouched && <div>
+                <h2>You picked:</h2>
+                <ul>
+                    {this.state.selectedThings.map(thing => {
+                        return <li key={thing}>{thing}</li>
+                    })}
+                </ul>
+                </div>}
             <form onSubmit={this.getAllSelections}>
                 <h3 >What are your preferences?</h3>
-
-                {/* <ol>
-                    <li>How many categories?</li>
-                    <li>Search bar to find specific ones</li>
-                    <li>When clicking one, have checkboxes auto generate and be selected</li>
-                    <li>click submit to save results</li>
-                </ol>
-
-                <ul>
-                    <li>Real time search results will have to use local state</li>
-                    <li>local state will have to have an array or object that gets added on each time category is selected.</li>
-                    <li>local state for form sill be tricky.</li>
-                </ul> */}
                 
 
-                <section className="options">
+                <section className="options row">
                     {options}
                 </section>
-                <div className="pref-click">
-                TEST
-                </div>
+                
                 <input type="submit"/>
                 
             </form>

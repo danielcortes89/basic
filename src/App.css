@@ -139,11 +139,15 @@ details {
   margin: 0 auto;
   background: black;
 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
   padding: 1rem;
 }
 
 .pref-click {
-  width: 150px;
+  width: 40%;
   height: 50px;
   padding: 1rem;
   margin: 1rem;
@@ -161,7 +165,7 @@ details {
 
 .blue {
 
-  width: 150px;
+  width: 40%;
   height: 50px;
   padding: 1rem;
   margin: 1rem;
