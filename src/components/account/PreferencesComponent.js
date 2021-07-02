@@ -8,14 +8,17 @@ class PreferencesComponent extends Component {
             foodsTouched: false,
             foodsActive: true,
             sportsActive: false,
+            hobbiesActive: false,
             selectedThings: [],
             allOptions: ['Italian', 'indian', 'Chinese', 'Japannese', 'Mexican', 'Meditarranean'],
-            sportsOptions: ['American Football', 'Football', 'Basketball', 'Squash', 'Tennis', 'golf']
+            sportsOptions: ['American Football', 'Football', 'Basketball', 'Squash', 'Tennis', 'golf'],
+            hobbyOptions: ['Archery', 'Basket Weaving', 'Knitting', 'Marbles', "Yu-Gi-Oh", 'Magic', 'Chess', 'Frisbee']
         }
 
         
         this.getAllSelections = this.getAllSelections.bind(this)
         this.getAllFood = this.getAllFood.bind(this)
+        this.getAllSports = this.getAllSports.bind(this)
         this.addThing = this.addThing.bind(this)
         this.removeThing = this.removeThing.bind(this)
     }
@@ -35,6 +38,17 @@ class PreferencesComponent extends Component {
         this.setState({
             foodsActive: false,
             sportsActive: true,
+            // foodsTouched: true
+        })
+    }
+
+    getAllSports = (e) => {
+        e.preventDefault()
+        // console.log(this.state.selectedThings)
+        this.setState({
+            
+            sportsActive: false,
+            hobbiesActive: true
             // foodsTouched: true
         })
     }
@@ -75,29 +89,30 @@ class PreferencesComponent extends Component {
                 addThing={this.addThing}
                 removeThing={this.removeThing}/>
         })
+
+        const hobbyOptions = this.state.hobbyOptions.map((option, index) => {
+            return <SingleOption 
+                option={option} 
+                key={index} 
+                addThing={this.addThing}
+                removeThing={this.removeThing}/>
+        })
         
     return (
-        <div className="login container">
-            {this.state.foodsTouched && <div>
-                <h2>You picked:</h2>
-                <ul>
-                    {this.state.selectedThings.map(thing => {
-                        return <li key={thing}>{thing}</li>
-                    })}
-                </ul>
-                </div>}
+        <div className="login">
+                <div className="container">
             {this.state.foodsActive && <form onSubmit={this.getAllFood}>
-                <h3 >What are your preferences?</h3>
+                <h3 >What are your Food Preferences?</h3>
                 
 
                 <section className="options row">
                     {options}
                 </section>
                 
-                <input type="submit"/>
+                <input type="submit" className="sub-btn" value="Submit Answers"/>
                 
             </form>}
-            {this.state.sportsActive && <form onSubmit={this.getAllSelections}>
+            {this.state.sportsActive && <form onSubmit={this.getAllSports}>
                 <h3 >What are your Sports preferences?</h3>
                 
 
@@ -105,9 +120,21 @@ class PreferencesComponent extends Component {
                     {sportsOptions}
                 </section>
                 
-                <input type="submit"/>
+                <input type="submit" className="sub-btn" value="Submit Answers"/>
                 
             </form>}
+            {this.state.hobbiesActive && <form onSubmit={this.getAllSelections}>
+                <h3 >What are your Hobby Preferences?</h3>
+                
+
+                <section className="options row">
+                    {hobbyOptions}
+                </section>
+                
+                <input type="submit" className="sub-btn" value="Submit Answers"/>
+                
+            </form>}
+            </div>
         </div>
     )
             }

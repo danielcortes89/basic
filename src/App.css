@@ -134,15 +134,45 @@ details {
   width: 50%;
 }
 
+.login {
+  background: black;
+  color: var(--main);
+  padding: 2rem;
+}
+
+.login form h3 {
+  text-align: center;
+}
+
+.login form  {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sub-btn {
+  /* margin: 0 auto; */
+  background: black;
+  border: 2px solid var(--main);
+  color: var(--main);
+  max-width: 200px;
+  padding: 1rem;
+  transition: 1s ease;
+}
+
+.sub-btn:hover {
+  background: var(--main);
+  color: black;
+  border: 2px solid black; 
+}
+
 .options {
   width: 90%;
   margin: 0 auto;
   background: black;
-
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-
   padding: 1rem;
 }
 
@@ -155,29 +185,21 @@ details {
   background: var(--main);
   color: black;
   border-radius: 10px;
-
-
-
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .blue {
-
   width: 40%;
   height: 50px;
   padding: 1rem;
   margin: 1rem;
-  border: 2px solid black;
-  
+  border: 2px solid var(--main);
   border-radius: 10px;
-
-
-
   display: flex;
   justify-content: center;
   align-items: center;
-  background: blue  !important;
-  color: white;
+  background: black  !important;
+  color: var(--main);
 }

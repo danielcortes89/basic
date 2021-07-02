@@ -33,7 +33,7 @@ class SingleOptionComponent extends Component {
         if(this.state.selected){
             return (
                 <div className="blue col col-md-5" onClick={() => this.deselectThis(this.props.option)}>
-                    {this.props.option}!
+                    {this.props.option}
                 </div>
             )
         } else {
