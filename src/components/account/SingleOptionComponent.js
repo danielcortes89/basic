@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 
+// Local state is for selected in color only
+// props method adds or removes from selection in parent component
+
 class SingleOptionComponent extends Component {
     constructor(props){
         super(props)

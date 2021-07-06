@@ -1,5 +1,7 @@
 import React from 'react'
 
+// ASK FOR WHAT TO PUT HERE
+
 const TermsComponent = () => {
     return (
         <div>

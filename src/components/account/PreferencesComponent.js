@@ -1,6 +1,11 @@
 import React, {Component} from 'react'
 import SingleOption from './SingleOptionComponent'
 
+// Boolean state used for each set of preferences
+// selectedThings gets fleshed out as options are selected
+// options are for data that will be selected and sent
+//  Check with backend for what to add and how to submit
+
 class PreferencesComponent extends Component {
     constructor(props){
         super(props)
@@ -34,7 +39,7 @@ class PreferencesComponent extends Component {
 
     getAllFood = (e) => {
         e.preventDefault()
-        // console.log(this.state.selectedThings)
+        
         this.setState({
             foodsActive: false,
             sportsActive: true,
@@ -44,12 +49,12 @@ class PreferencesComponent extends Component {
 
     getAllSports = (e) => {
         e.preventDefault()
-        // console.log(this.state.selectedThings)
+        
         this.setState({
             
             sportsActive: false,
             hobbiesActive: true
-            // foodsTouched: true
+           
         })
     }
 

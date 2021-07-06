@@ -1,5 +1,7 @@
 import React from 'react'
 
+// Check with backend for how/ what to submit
+
 const LoginComponent = () => {
     return (
         <div className="login">

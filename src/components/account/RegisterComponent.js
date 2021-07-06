@@ -1,5 +1,7 @@
 import React from 'react'
 
+// Basic form to flesh out
+
 const RegisterComponent = () => {
     return (
         <div className="register">

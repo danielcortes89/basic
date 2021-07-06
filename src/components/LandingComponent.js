@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+// Modeled after what I was provided with in video
+// Assets provided for MINGO will help
+
 const LandingComponent = () => {
     return (
         <div className="land">

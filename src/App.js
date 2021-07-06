@@ -9,6 +9,8 @@ import Register from './components/account/RegisterComponent'
 
 import './App.css';
 
+// Basic routing - No High Level State
+
 function App() {
   return (
     <div className="App">
