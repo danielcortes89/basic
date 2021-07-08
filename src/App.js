@@ -6,6 +6,7 @@ import Terms from './components/utilities/TermsComponent'
 import Preferences from './components/account/PreferencesComponent'
 import Login from './components/account/LoginComponent'
 import Register from './components/account/RegisterComponent'
+import Profile from './components/account/ProfileComponent'
 
 import './App.css';
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/register" component={Register}/>
           <Route path="/preferences" component={Preferences}/>
           <Route path="/terms" component={Terms}/>
+          <Route path="/profile" component={Profile}/>
           <Redirect to="/"/>
         </Switch>
       </Router>

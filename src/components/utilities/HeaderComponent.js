@@ -17,6 +17,9 @@ const HeaderComponent = () => {
             <span>
                 <Link to="/preferences">Preferences</Link>
             </span>
+            <span>
+                <Link to="/profile">Profile</Link>
+            </span>
         </div>
     )
 }
