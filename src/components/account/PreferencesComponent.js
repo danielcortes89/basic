@@ -14,6 +14,7 @@ class PreferencesComponent extends Component {
             foodsActive: true,
             sportsActive: false,
             hobbiesActive: false,
+            openDrop: false,
             selectedThings: [],
             allOptions: ['Italian', 'indian', 'Chinese', 'Japannese', 'Mexican', 'Meditarranean'],
             sportsOptions: ['American Football', 'Football', 'Basketball', 'Squash', 'Tennis', 'golf'],
@@ -26,6 +27,7 @@ class PreferencesComponent extends Component {
         this.getAllSports = this.getAllSports.bind(this)
         this.addThing = this.addThing.bind(this)
         this.removeThing = this.removeThing.bind(this)
+        this.toggleOpen = this.toggleOpen.bind(this)
     }
 
 
@@ -78,6 +80,13 @@ class PreferencesComponent extends Component {
         })
     }
 
+    toggleOpen= () => {
+        this.setState(prevState => {
+            return { openDrop: !prevState.openDrop }
+        })
+
+    }
+
     render(){
         const options = this.state.allOptions.map((option, index) => {
             return <SingleOption 
@@ -112,6 +121,18 @@ class PreferencesComponent extends Component {
 
                 <section className="options row">
                     {options}
+                </section>
+
+                <section>
+                    {!this.state.openDrop && <div className="pref-click" onClick={this.toggleOpen}>Basketball</div>}
+                    {this.state.openDrop && <div>
+                        <div className="blue" onClick={this.toggleOpen}>Finished</div>
+                        <section>
+                            <div className="pref-click">San Antonio Spurs</div>    
+                            <div className="pref-click">Dallas Mavericks</div>
+                        </section>    
+                        </div>
+                    }
                 </section>
                 
                 <input type="submit" className="sub-btn" value="Submit Answers"/>
