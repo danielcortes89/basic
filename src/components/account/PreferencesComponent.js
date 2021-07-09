@@ -17,6 +17,11 @@ class PreferencesComponent extends Component {
             openDrop: false,
 
             selectedThings: [],
+            theObject: {
+                Basketball: ['San Antonio', 'Los Angeles'],
+                Football: ['St. Lous', 'New York']
+            },
+            sportsPick: [],
 
             allOptions: ['Italian', 'indian', 'Chinese', 'Japannese', 'Mexican', 'Meditarranean'],
             sportsOptions: ['American Football', 'Football', 'Basketball', 'Squash', 'Tennis', 'golf'],
@@ -35,27 +40,25 @@ class PreferencesComponent extends Component {
 
     getAllSelections = (e) => {
         e.preventDefault()
-        console.log(this.state.selectedThings)
-        this.setState({
-            foodsTouched: true
-        })
-        const theObject = {
-            Basketball: ['San Antonio', 'Los Angeles'],
-            Football: ['St. Lous', 'New York']
-        }
+        // console.log(this.state.selectedThings)
+        
 
-        const selectedCategories = this.state.selectedThings.filter(item => theObject[item])
+        const selectedCategories = this.state.selectedThings.filter(item => this.state.theObject[item])
             // if(theObject.item){
             //     return {item: theObject.item}
             // }
         let selectedArray = selectedCategories.map(item => {
                 return {
-                    [item]: theObject[item]
+                    [item]: this.state.theObject[item]
                 }
             })
         
 
         console.log(selectedArray)
+        this.setState({
+            foodsTouched: true,
+            sportsPick: selectedArray
+        })
     }
 
     getAllFood = (e) => {
