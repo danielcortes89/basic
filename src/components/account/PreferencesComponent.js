@@ -22,6 +22,7 @@ class PreferencesComponent extends Component {
                 Football: ['St. Lous', 'New York']
             },
             sportsPick: [],
+            final: false,
 
             allOptions: ['Italian', 'indian', 'Chinese', 'Japannese', 'Mexican', 'Meditarranean'],
             sportsOptions: ['American Football', 'Football', 'Basketball', 'Squash', 'Tennis', 'golf'],
@@ -54,10 +55,13 @@ class PreferencesComponent extends Component {
             })
         
 
-        console.log(selectedArray)
+        // console.log(selectedArray)
         this.setState({
             foodsTouched: true,
-            sportsPick: selectedArray
+            sportsPick: selectedArray,
+            final: true,
+            hobbiesActive: false
+            
         })
     }
 
@@ -133,6 +137,14 @@ class PreferencesComponent extends Component {
                 addThing={this.addThing}
                 removeThing={this.removeThing}/>
         })
+        const finalOptions = this.state.sportsPick.map((option, index) => {
+            return <SingleOption 
+                option={option} 
+                key={index} 
+                addThing={this.addThing}
+                removeThing={this.removeThing}
+            />
+        })
         
     return (
         <div className="login">
@@ -182,6 +194,13 @@ class PreferencesComponent extends Component {
                 <input type="submit" className="sub-btn" value="Submit Answers"/>
                 
             </form>}
+            {this.state.final && <form>
+                <h3>Fill out the specifics</h3>
+                <section className="options row">
+                    {/* {finalOptions} */}
+                </section>
+                <input type="submit" className="sub-btn" value="Submit Answers"/>
+                </form>}
             </div>
         </div>
     )
