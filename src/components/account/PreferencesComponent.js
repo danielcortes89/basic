@@ -63,6 +63,7 @@ class PreferencesComponent extends Component {
             hobbiesActive: false
             
         })
+        console.log(Object.keys(selectedArray[0]))
     }
 
     getAllFood = (e) => {
@@ -138,12 +139,21 @@ class PreferencesComponent extends Component {
                 removeThing={this.removeThing}/>
         })
         const finalOptions = this.state.sportsPick.map((option, index) => {
-            return <SingleOption 
-                option={option} 
-                key={index} 
-                addThing={this.addThing}
-                removeThing={this.removeThing}
-            />
+            const cat = Object.keys(option)
+            return (
+                <div key={index}>
+                    <h2>{cat}</h2>
+                    {option[cat].map((single, index) => {
+                        return       <SingleOption 
+                        option={single} 
+                        key={index} 
+                        addThing={this.addThing}
+                        removeThing={this.removeThing}
+                    />
+                    })}
+                </div>
+            )
+            
         })
         
     return (
@@ -157,7 +167,7 @@ class PreferencesComponent extends Component {
                     {options}
                 </section>
 
-                <section>
+                {/* <section>
                     {!this.state.openDrop && <div className="pref-click" onClick={this.toggleOpen}>Basketball</div>}
                     {this.state.openDrop && <div>
                         <div className="blue" onClick={this.toggleOpen}>Finished</div>
@@ -167,7 +177,7 @@ class PreferencesComponent extends Component {
                         </section>    
                         </div>
                     }
-                </section>
+                </section> */}
                 
                 <input type="submit" className="sub-btn" value="Submit Answers"/>
                 
@@ -197,7 +207,7 @@ class PreferencesComponent extends Component {
             {this.state.final && <form>
                 <h3>Fill out the specifics</h3>
                 <section className="options row">
-                    {/* {finalOptions} */}
+                    {finalOptions}
                 </section>
                 <input type="submit" className="sub-btn" value="Submit Answers"/>
                 </form>}
