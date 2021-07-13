@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import SingleOption from './SingleOptionComponent'
+import SingleFinalOption from './SingleFinalOptionComponent'
 
 // Boolean state used for each set of preferences
 // selectedThings gets fleshed out as options are selected
@@ -18,14 +19,23 @@ class PreferencesComponent extends Component {
 
             selectedThings: [],
             theObject: {
-                Basketball: ['San Antonio', 'Los Angeles'],
-                Football: ['St. Lous', 'New York']
+                Basketball: ['San Antonio, Spurs', 'Los Angeles'],
+                Soccer: ['USWNT', 'Manchester united'],
+                Football: ['St. Louis Rams', 'Chargers'],
+                Squash: ['Neighboorhood team'],
+                Tennis: ['Andy Murray', 'Nader'],
+                Golf: ['Tiger Woods', 'Jack Nicolas'],
+                Japanese: ['Sushi', 'Sake', 'Teriyaki'],
+                Mexican: ['Tacos', 'Enchiladas', 'Poblanos'],
+                Meditarranean: ['Gyros', 'Greek Salad', 'Mousakka']
+
             },
             sportsPick: [],
             final: false,
+            finalSpecifics: [],
 
-            allOptions: ['Italian', 'indian', 'Chinese', 'Japannese', 'Mexican', 'Meditarranean'],
-            sportsOptions: ['American Football', 'Football', 'Basketball', 'Squash', 'Tennis', 'golf'],
+            allOptions: ['Italian', 'indian', 'Chinese', 'Japanese', 'Mexican', 'Meditarranean'],
+            sportsOptions: ['Football', 'Soccer', 'Basketball', 'Squash', 'Tennis', 'golf'],
             hobbyOptions: ['Archery', 'Basket Weaving', 'Knitting', 'Marbles', "Yu-Gi-Oh", 'Magic', 'Chess', 'Frisbee']
         }
 
@@ -36,6 +46,8 @@ class PreferencesComponent extends Component {
         this.addThing = this.addThing.bind(this)
         this.removeThing = this.removeThing.bind(this)
         this.toggleOpen = this.toggleOpen.bind(this)
+        this.addFinalThing = this.addFinalThing.bind(this)
+        this.removeFinalThing = this.removeFinalThing.bind(this)
     }
 
 
@@ -97,12 +109,32 @@ class PreferencesComponent extends Component {
         })
     }
 
+    addFinalThing = (thing) => {
+        this.setState(state => {
+            const finalSpecifics = [...state.finalSpecifics, thing]
+
+            return {
+                finalSpecifics
+            }
+        })
+    }
+
     removeThing = (thing) => {
         this.setState(state => {
             const selectedThings = state.selectedThings.filter((item) => thing !== item)
 
             return {
                 selectedThings
+            }
+        })
+    }
+
+    removeFinalThing = (thing) => {
+        this.setState(state => {
+            const finalSpecifics = state.finalSpecifics.filter((item) => thing !== item)
+
+            return {
+                finalSpecifics
             }
         })
     }
@@ -138,23 +170,44 @@ class PreferencesComponent extends Component {
                 addThing={this.addThing}
                 removeThing={this.removeThing}/>
         })
-        const finalOptions = this.state.sportsPick.map((option, index) => {
-            const cat = Object.keys(option)
-            return (
-                <div key={index}>
-                    <h2>{cat}</h2>
-                    {option[cat].map((single, index) => {
-                        return       <SingleOption 
-                        option={single} 
-                        key={index} 
-                        addThing={this.addThing}
-                        removeThing={this.removeThing}
-                    />
-                    })}
-                </div>
-            )
+        const finalOptions = this.state.sportsPick.map((selection, index) => {
+            const cat = Object.keys(selection)
+            return <form key={index}>
+                        <h3>{cat}</h3>
+                        <section className="options row">
+                            {selection[cat].map((option, index) => {
+                                return <SingleFinalOption 
+                                    option={option} 
+                                    key={index} 
+                                    addFinalThing={this.addFinalThing}
+                                    removeFinalThing={this.removeFinalThing}
+                                />
+                            })}
+                        </section>
+                        {/* <input type="submit" className="sub-btn" value="Submit Answers"/> */}
+                    </form>
+
             
         })
+        
+        
+        // this.state.sportsPick.map((option, index) => {
+        //     const cat = Object.keys(option)
+        //     return (
+        //         <div key={index}>
+        //             <h2>{cat}</h2>
+        //             {option[cat].map((single, index) => {
+        //                 return       <SingleOption 
+        //                 option={single} 
+        //                 key={index} 
+        //                 addThing={this.addThing}
+        //                 removeThing={this.removeThing}
+        //             />
+        //             })}
+        //         </div>
+        //     )
+            
+        // })
         
     return (
         <div className="login">
@@ -204,13 +257,7 @@ class PreferencesComponent extends Component {
                 <input type="submit" className="sub-btn" value="Submit Answers"/>
                 
             </form>}
-            {this.state.final && <form>
-                <h3>Fill out the specifics</h3>
-                <section className="options row">
-                    {finalOptions}
-                </section>
-                <input type="submit" className="sub-btn" value="Submit Answers"/>
-                </form>}
+            {this.state.final && finalOptions}
             </div>
         </div>
     )
