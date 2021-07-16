@@ -14,10 +14,11 @@ class PreferencesComponent extends Component {
             foodsTouched: false,
             foodsActive: true,
             sportsActive: false,
-            hobbiesActive: false,
+            entertainmentActive: false,
             openDrop: false,
 
             selectedThings: [],
+            selectedSports: [],
             theObject: {
                 Basketball: ['San Antonio, Spurs', 'Los Angeles'],
                 Soccer: ['USWNT', 'Manchester united'],
@@ -36,7 +37,7 @@ class PreferencesComponent extends Component {
 
             allOptions: ['Italian', 'indian', 'Chinese', 'Japanese', 'Mexican', 'Meditarranean'],
             sportsOptions: ['Football', 'Soccer', 'Basketball', 'Squash', 'Tennis', 'golf'],
-            hobbyOptions: ['Archery', 'Basket Weaving', 'Knitting', 'Marbles', "Yu-Gi-Oh", 'Magic', 'Chess', 'Frisbee']
+            entertainmentOptions: ['Archery', 'Basket Weaving', 'Knitting', 'Marbles', "Yu-Gi-Oh", 'Magic', 'Chess', 'Frisbee']
         }
 
         
@@ -56,7 +57,7 @@ class PreferencesComponent extends Component {
         // console.log(this.state.selectedThings)
         
 
-        const selectedCategories = this.state.selectedThings.filter(item => this.state.theObject[item])
+        const selectedCategories = this.state.selectedSports.filter(item => this.state.theObject[item])
             // if(theObject.item){
             //     return {item: theObject.item}
             // }
@@ -72,7 +73,7 @@ class PreferencesComponent extends Component {
             foodsTouched: true,
             sportsPick: selectedArray,
             final: true,
-            hobbiesActive: false
+            entertainmentActive: false
             
         })
         console.log(Object.keys(selectedArray[0]))
@@ -94,7 +95,7 @@ class PreferencesComponent extends Component {
         this.setState({
             
             sportsActive: false,
-            hobbiesActive: true
+            entertainmentActive: true
            
         })
     }
@@ -105,6 +106,16 @@ class PreferencesComponent extends Component {
 
             return {
                 selectedThings
+            }
+        })
+    }
+
+    addSportThing = (thing) => {
+        this.setState(state => {
+            const selectedSports = [...state.selectedSports, thing]
+
+            return {
+                selectedSports
             }
         })
     }
@@ -125,6 +136,16 @@ class PreferencesComponent extends Component {
 
             return {
                 selectedThings
+            }
+        })
+    }
+
+    removeSportThing = (thing) => {
+        this.setState(state => {
+            const selectedSports = state.selectedSports.filter((item) => thing !== item)
+
+            return {
+                selectedSports
             }
         })
     }
@@ -159,11 +180,11 @@ class PreferencesComponent extends Component {
             return <SingleOption 
                 option={option} 
                 key={index} 
-                addThing={this.addThing}
-                removeThing={this.removeThing}/>
+                addThing={this.addSportThing}
+                removeThing={this.removeSportThing}/>
         })
 
-        const hobbyOptions = this.state.hobbyOptions.map((option, index) => {
+        const entertainmentOptions = this.state.entertainmentOptions.map((option, index) => {
             return <SingleOption 
                 option={option} 
                 key={index} 
@@ -191,23 +212,7 @@ class PreferencesComponent extends Component {
         })
         
         
-        // this.state.sportsPick.map((option, index) => {
-        //     const cat = Object.keys(option)
-        //     return (
-        //         <div key={index}>
-        //             <h2>{cat}</h2>
-        //             {option[cat].map((single, index) => {
-        //                 return       <SingleOption 
-        //                 option={single} 
-        //                 key={index} 
-        //                 addThing={this.addThing}
-        //                 removeThing={this.removeThing}
-        //             />
-        //             })}
-        //         </div>
-        //     )
-            
-        // })
+    
         
     return (
         <div className="login">
@@ -246,12 +251,12 @@ class PreferencesComponent extends Component {
                 <input type="submit" className="sub-btn" value="Submit Answers"/>
                 
             </form>}
-            {this.state.hobbiesActive && <form onSubmit={this.getAllSelections}>
-                <h3 >What are your Hobby Preferences?</h3>
+            {this.state.entertainmentActive && <form onSubmit={this.getAllSelections}>
+                <h3 >What are your Entertainment Preferences?</h3>
                 
 
                 <section className="options row">
-                    {hobbyOptions}
+                    {entertainmentOptions}
                 </section>
                 
                 <input type="submit" className="sub-btn" value="Submit Answers"/>
