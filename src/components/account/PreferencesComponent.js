@@ -34,7 +34,8 @@ class PreferencesComponent extends Component {
 
             foodOptions: ['Italian', 'indian', 'Chinese', 'Japanese', 'Mexican', 'Meditarranean'],
             sportsOptions: ['Football', 'Soccer', 'Basketball', 'Squash', 'Tennis', 'golf'],
-            entertainmentOptions: ['Archery', 'Basket Weaving', 'Knitting', 'Marbles', "Yu-Gi-Oh", 'Magic', 'Chess', 'Frisbee']
+            entertainmentOptions: ['Music', 'Dancing', 'Movies', 'Theater', "Art", 'Board Games'],
+            recreationOptions: ['Parks', '']
         }
 
         
