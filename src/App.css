@@ -203,3 +203,8 @@ details {
   background: black  !important;
   color: var(--main);
 }
+
+.final-form {
+  border-bottom: var(--main) 3px solid;
+  height: 40vh;
+}

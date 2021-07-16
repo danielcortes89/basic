@@ -52,21 +52,16 @@ class PreferencesComponent extends Component {
 
     getAllSelections = (e) => {
         e.preventDefault()
-        // console.log(this.state.selectedThings)
         
 
         const selectedCategories = this.state.selectedSports.filter(item => this.state.theObject[item])
-            // if(theObject.item){
-            //     return {item: theObject.item}
-            // }
+           
         let selectedArray = selectedCategories.map(item => {
                 return {
                     [item]: this.state.theObject[item]
                 }
             })
         
-
-        // console.log(selectedArray)
         this.setState({
             foodsTouched: true,
             sportsPick: selectedArray,
@@ -82,8 +77,7 @@ class PreferencesComponent extends Component {
         
         this.setState({
             foodsActive: false,
-            sportsActive: true,
-            // foodsTouched: true
+            sportsActive: true
         })
     }
 
@@ -191,7 +185,7 @@ class PreferencesComponent extends Component {
         })
         const finalOptions = this.state.sportsPick.map((selection, index) => {
             const cat = Object.keys(selection)
-            return <form key={index}>
+            return <form key={index} className="final-form">
                         <h3>{cat}</h3>
                         <section className="options row">
                             {selection[cat].map((option, index) => {
