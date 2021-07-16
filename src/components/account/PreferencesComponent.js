@@ -25,17 +25,14 @@ class PreferencesComponent extends Component {
                 Football: ['St. Louis Rams', 'Chargers'],
                 Squash: ['Neighboorhood team'],
                 Tennis: ['Andy Murray', 'Nader'],
-                Golf: ['Tiger Woods', 'Jack Nicolas'],
-                Japanese: ['Sushi', 'Sake', 'Teriyaki'],
-                Mexican: ['Tacos', 'Enchiladas', 'Poblanos'],
-                Meditarranean: ['Gyros', 'Greek Salad', 'Mousakka']
+                Golf: ['Tiger Woods', 'Jack Nicolas']
 
             },
             sportsPick: [],
             final: false,
             finalSpecifics: [],
 
-            allOptions: ['Italian', 'indian', 'Chinese', 'Japanese', 'Mexican', 'Meditarranean'],
+            foodOptions: ['Italian', 'indian', 'Chinese', 'Japanese', 'Mexican', 'Meditarranean'],
             sportsOptions: ['Football', 'Soccer', 'Basketball', 'Squash', 'Tennis', 'golf'],
             entertainmentOptions: ['Archery', 'Basket Weaving', 'Knitting', 'Marbles', "Yu-Gi-Oh", 'Magic', 'Chess', 'Frisbee']
         }
@@ -168,7 +165,7 @@ class PreferencesComponent extends Component {
     }
 
     render(){
-        const options = this.state.allOptions.map((option, index) => {
+        const foodOptions = this.state.foodOptions.map((option, index) => {
             return <SingleOption 
                 option={option} 
                 key={index} 
@@ -222,7 +219,7 @@ class PreferencesComponent extends Component {
                 
 
                 <section className="options row">
-                    {options}
+                    {foodOptions}
                 </section>
 
                 {/* <section>
