@@ -208,7 +208,7 @@ class PreferencesComponent extends Component {
         
     return (
         <div className="login">
-                <div className="container">
+                <div className="container preferences-body">
             {this.state.foodsActive && <form onSubmit={this.getAllFood}>
                 <h3 >What are your Food Preferences?</h3>
                 

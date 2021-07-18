@@ -208,3 +208,7 @@ details {
   border-bottom: var(--main) 3px solid;
   height: 40vh;
 }
+
+.preferences-body {
+  min-height: 80vh;
+}
