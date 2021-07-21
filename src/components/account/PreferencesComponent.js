@@ -32,7 +32,15 @@ class PreferencesComponent extends Component {
             final: false,
             finalSpecifics: [],
 
-            foodOptions: ['Italian', 'indian', 'Chinese', 'Japanese', 'Mexican', 'Meditarranean'],
+            foodOptions: [ 
+            //     {
+            //     name: 'Italian',
+            //     categories: ['food'],
+
+
+            // },
+            'Italian',
+             'indian', 'Chinese', 'Japanese', 'Mexican', 'Meditarranean'],
             sportsOptions: ['Football', 'Soccer', 'Basketball', 'Squash', 'Tennis', 'golf'],
             entertainmentOptions: ['Music', 'Dancing', 'Movies', 'Theater', "Art", 'Board Games'],
             recreationOptions: ['Parks', '']

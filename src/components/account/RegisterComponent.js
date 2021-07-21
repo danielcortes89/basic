@@ -10,7 +10,7 @@ const RegisterComponent = () => {
 
                 <input type="text" placeholder="Name"/>
 
-                <input type="date"/>
+                {/* <input type="date"/>
 
                 <input type="text" placeholder="Gender"/>
 
@@ -28,11 +28,11 @@ const RegisterComponent = () => {
                         <option>English</option>
                         <option>Spanish</option>
                     </select>
-                </div>
+                </div> */}
 
                 <input type="text" placeholder="Hometown"/>
 
-                <div id="status">
+                {/* <div id="status">
                     <div>
                         <input type="radio" id="single"/>
                         <label htmlFor="single" name="relationship">Single</label>
@@ -48,19 +48,19 @@ const RegisterComponent = () => {
                         <input type="radio" id="married"/>
                         <label htmlFor="married" name="relationship">Married</label>
                     </div>
-                </div>
+                </div> */}
                 
 
-                <div className="reg-selects">
+                {/* <div className="reg-selects">
                     <label htmlFor="orientation">Interested In:</label>
                     <select id="orientation">
                         <option>Interested in</option>
                         <option>Men</option>
                     </select>
-                </div>
+                </div> */}
                 
 
-                <div>
+                {/* <div>
                     <span className="">Color</span>
 
                     <input id="blue" name="fav-color" type="checkbox"/>
@@ -68,7 +68,7 @@ const RegisterComponent = () => {
 
                     <input id="black" name="fav-color" type="checkbox"/>
                     <label htmlFor="black">Black</label>
-                </div>
+                </div> */}
             </form>
         </div>
     )
