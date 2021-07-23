@@ -89,6 +89,7 @@ button {
   border: 0;
   border-bottom: 2px solid var(--main);
   margin-right: 2rem;
+  color: white;
 }
 
 .reg-selects {
