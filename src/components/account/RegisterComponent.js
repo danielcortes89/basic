@@ -1,14 +1,31 @@
-import React from 'react'
+import React, { Component } from 'react'
 
 // Basic form to flesh out
 
-const RegisterComponent = () => {
+class RegisterComponent extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            name: '',
+            password: ''
+        }
+    }
+
+    handleInput(e){
+
+    }
+
+    render(){
     return (
         <div className="register">
             <form >
                 <h3 >Tell me about yourself</h3>
 
                 <input type="text" placeholder="Name"/>
+
+                <input type="password" placeholder="Password"/>
+
+                <input type="submit" value="Submit"/>
 
                 {/* <input type="date"/>
 
@@ -30,7 +47,7 @@ const RegisterComponent = () => {
                     </select>
                 </div> */}
 
-                <input type="text" placeholder="Hometown"/>
+                {/* <input type="text" placeholder="Hometown"/> */}
 
                 {/* <div id="status">
                     <div>
@@ -72,6 +89,7 @@ const RegisterComponent = () => {
             </form>
         </div>
     )
+            }
 }
 
 export default RegisterComponent;
