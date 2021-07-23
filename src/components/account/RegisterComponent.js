@@ -9,21 +9,51 @@ class RegisterComponent extends Component {
             name: '',
             password: ''
         }
+
+        // this.handleInput = this.handleInput.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    handleInput(e){
+    // const handleInput = (e) => {
+    //     e.preventDefault()
 
+    //     this.setState({
+    //         e.target.name: e.target.value
+    //     })
+    // }
+
+    handleSubmit(e){
+        e.preventDefault()
+        console.log(this.state)
     }
 
     render(){
+        const handleInput = (e) => {
+            e.preventDefault()
+            const target = e.target.name
+    
+            this.setState({
+                [target]: e.target.value
+            })
+        }
     return (
         <div className="register">
-            <form >
+            <form onSubmit={this.handleSubmit}>
                 <h3 >Tell me about yourself</h3>
 
-                <input type="text" placeholder="Name"/>
+                <input 
+                    type="text" 
+                    placeholder="Name"
+                    name="name"
+                    value={this.state.name}
+                    onChange={(e) => handleInput(e)}/>
 
-                <input type="password" placeholder="Password"/>
+                <input 
+                    type="password" 
+                    placeholder="Password"
+                    name="password"
+                    value={this.state.password}
+                    onChange={(e) => handleInput(e)}/>
 
                 <input type="submit" value="Submit"/>
 
