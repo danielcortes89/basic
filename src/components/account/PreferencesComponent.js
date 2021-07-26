@@ -19,6 +19,8 @@ class PreferencesComponent extends Component {
 
             selectedThings: [],
             selectedSports: [],
+
+            // theObject is for the futher types of sports teams
             theObject: {
                 Basketball: ['San Antonio, Spurs', 'Los Angeles'],
                 Soccer: ['USWNT', 'Manchester united'],
@@ -32,15 +34,7 @@ class PreferencesComponent extends Component {
             final: false,
             finalSpecifics: [],
 
-            foodOptions: [ 
-            //     {
-            //     name: 'Italian',
-            //     categories: ['food'],
-
-
-            // },
-            'Italian',
-             'indian', 'Chinese', 'Japanese', 'Mexican', 'Meditarranean'],
+            foodOptions: [ 'Italian','indian', 'Chinese', 'Japanese', 'Mexican', 'Meditarranean'],
             sportsOptions: ['Football', 'Soccer', 'Basketball', 'Squash', 'Tennis', 'golf'],
             entertainmentOptions: ['Music', 'Dancing', 'Movies', 'Theater', "Art", 'Board Games'],
             recreationOptions: ['Parks', '']
@@ -58,6 +52,29 @@ class PreferencesComponent extends Component {
     }
 
 
+    // Activates the sports selection
+    getAllFood = (e) => {
+        e.preventDefault()
+        
+        this.setState({
+            foodsActive: false,
+            sportsActive: true
+        })
+    }
+
+    // Activates the entertainment section
+    getAllSports = (e) => {
+        e.preventDefault()
+        
+        this.setState({
+            
+            sportsActive: false,
+            entertainmentActive: true
+           
+        })
+    }
+
+    // This triggers the more selective sports options
     getAllSelections = (e) => {
         e.preventDefault()
         
@@ -80,26 +97,7 @@ class PreferencesComponent extends Component {
         console.log(Object.keys(selectedArray[0]))
     }
 
-    getAllFood = (e) => {
-        e.preventDefault()
-        
-        this.setState({
-            foodsActive: false,
-            sportsActive: true
-        })
-    }
-
-    getAllSports = (e) => {
-        e.preventDefault()
-        
-        this.setState({
-            
-            sportsActive: false,
-            entertainmentActive: true
-           
-        })
-    }
-
+    // Handles selection for food and entertainment
     addThing = (thing) => {
         this.setState(state => {
             const selectedThings = [...state.selectedThings, thing]
@@ -110,6 +108,7 @@ class PreferencesComponent extends Component {
         })
     }
 
+    // Handles selection for sports 
     addSportThing = (thing) => {
         this.setState(state => {
             const selectedSports = [...state.selectedSports, thing]
@@ -120,6 +119,7 @@ class PreferencesComponent extends Component {
         })
     }
 
+    // Handles selection for the last level of sports
     addFinalThing = (thing) => {
         this.setState(state => {
             const finalSpecifics = [...state.finalSpecifics, thing]
@@ -216,53 +216,40 @@ class PreferencesComponent extends Component {
         
     return (
         <div className="login">
-                <div className="container preferences-body">
-            {this.state.foodsActive && <form onSubmit={this.getAllFood}>
-                <h3 >What are your Food Preferences?</h3>
-                
+            <div className="container preferences-body">
+                {this.state.foodsActive && <form onSubmit={this.getAllFood}>
+                    <h3 >What are your Food Preferences?</h3>
 
-                <section className="options row">
-                    {foodOptions}
-                </section>
+                    <section className="options row">
+                        {foodOptions}
+                    </section>
+                
+                    <input type="submit" className="sub-btn" value="Submit Answers"/>
+                
+                </form>}
 
-                {/* <section>
-                    {!this.state.openDrop && <div className="pref-click" onClick={this.toggleOpen}>Basketball</div>}
-                    {this.state.openDrop && <div>
-                        <div className="blue" onClick={this.toggleOpen}>Finished</div>
-                        <section>
-                            <div className="pref-click">San Antonio Spurs</div>    
-                            <div className="pref-click">Dallas Mavericks</div>
-                        </section>    
-                        </div>
-                    }
-                </section> */}
+                {this.state.sportsActive && <form onSubmit={this.getAllSports}>
+                    <h3 >What are your Sports preferences?</h3>
+            
+                    <section className="options row">
+                        {sportsOptions}
+                    </section>
                 
-                <input type="submit" className="sub-btn" value="Submit Answers"/>
+                    <input type="submit" className="sub-btn" value="Submit Answers"/>
                 
-            </form>}
-            {this.state.sportsActive && <form onSubmit={this.getAllSports}>
-                <h3 >What are your Sports preferences?</h3>
-                
+                </form>}
 
-                <section className="options row">
-                    {sportsOptions}
-                </section>
+                {this.state.entertainmentActive && <form onSubmit={this.getAllSelections}>
+                    <h3 >What are your Entertainment Preferences?</h3>
                 
-                <input type="submit" className="sub-btn" value="Submit Answers"/>
+                    <section className="options row">
+                        {entertainmentOptions}
+                    </section>
                 
-            </form>}
-            {this.state.entertainmentActive && <form onSubmit={this.getAllSelections}>
-                <h3 >What are your Entertainment Preferences?</h3>
+                    <input type="submit" className="sub-btn" value="Submit Answers"/>
                 
-
-                <section className="options row">
-                    {entertainmentOptions}
-                </section>
-                
-                <input type="submit" className="sub-btn" value="Submit Answers"/>
-                
-            </form>}
-            {this.state.final && finalOptions}
+                </form>}
+                {this.state.final && finalOptions}
             </div>
         </div>
     )

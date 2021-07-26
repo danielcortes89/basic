@@ -7,20 +7,12 @@ class RegisterComponent extends Component {
         super(props)
         this.state = {
             name: '',
-            password: ''
+            password: '',
+            email: ''
         }
 
-        // this.handleInput = this.handleInput.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
-
-    // const handleInput = (e) => {
-    //     e.preventDefault()
-
-    //     this.setState({
-    //         e.target.name: e.target.value
-    //     })
-    // }
 
     handleSubmit(e){
         e.preventDefault()
@@ -46,6 +38,13 @@ class RegisterComponent extends Component {
                     placeholder="Name"
                     name="name"
                     value={this.state.name}
+                    onChange={(e) => handleInput(e)}/>
+
+                <input 
+                    type="email" 
+                    placeholder="Email"
+                    name="email"
+                    value={this.state.email}
                     onChange={(e) => handleInput(e)}/>
 
                 <input 
