@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 
 // Basic form to flesh out
-
 class RegisterComponent extends Component {
     constructor(props){
         super(props)
         this.state = {
             name: '',
             password: '',
-            email: ''
+            email: '',
+            location: ''
         }
 
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -52,6 +52,13 @@ class RegisterComponent extends Component {
                     placeholder="Password"
                     name="password"
                     value={this.state.password}
+                    onChange={(e) => handleInput(e)}/>
+
+                <input 
+                    type="text" 
+                    placeholder="Enter Location"
+                    name="location"
+                    value={this.state.location}
                     onChange={(e) => handleInput(e)}/>
 
                 <input type="submit" value="Submit"/>

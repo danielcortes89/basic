@@ -191,6 +191,7 @@ class PreferencesComponent extends Component {
                 addThing={this.addThing}
                 removeThing={this.removeThing}/>
         })
+        
         const finalOptions = this.state.sportsPick.map((selection, index) => {
             const cat = Object.keys(selection)
             return <form key={index} className="final-form">
@@ -207,12 +208,8 @@ class PreferencesComponent extends Component {
                         </section>
                         {/* <input type="submit" className="sub-btn" value="Submit Answers"/> */}
                     </form>
-
-            
         })
         
-        
-    
         
     return (
         <div className="login">

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+// Making similar model to how preferences are handled 
 export default class ProfileComponent extends Component {
     constructor (props){
         super(props)
@@ -12,6 +13,7 @@ export default class ProfileComponent extends Component {
     submitAnswers = () => {
 
     }
+
     render() {
         return (
             <div>
