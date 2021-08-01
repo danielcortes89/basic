@@ -17,9 +17,14 @@ export default class ProfileComponent extends Component {
     render() {
         return (
             <div className="profile">
-                <div>
-                    <h2>Someone's Profile</h2>
-                    <img src="https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png"/>
+                <div className="intro-card">
+                    <div>
+                        <h2>Someone's Profile</h2>
+                        <img src="https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png"/>
+                    </div>
+                    <div>
+                        <h3>This is where we could put some kind of geolocation info.</h3>
+                    </div>
                 </div>
                 <div>
                     <h2>Then we can have particulars about the individual</h2>

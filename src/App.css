@@ -225,6 +225,24 @@ details {
 }
 
 /* Profile */
+.profile {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.profile div {
+  border: 2px solid black;
+}
+
+.profile .intro-card {
+  display: flex;
+  
+}
+
+.profile .intro-card div {
+  flex: 1;
+}
+
 .profile div img {
   width: 200px;
   height: 200px;
