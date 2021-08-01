@@ -16,8 +16,20 @@ export default class ProfileComponent extends Component {
 
     render() {
         return (
-            <div>
-                <h2>Profile</h2>
+            <div className="profile">
+                <div>
+                    <h2>Someone's Profile</h2>
+                    <img src="https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png"/>
+                </div>
+                <div>
+                    <h2>Then we can have particulars about the individual</h2>
+                    <h3>Your favorites:</h3>
+                    <h4>Sports</h4>
+                    <ul>
+                        <li>Basketball</li>
+                        <li>Soccer</li>
+                    </ul>
+                </div>
                 <form>
                     <input type="number" value={40}/>
                     <select name="unit">

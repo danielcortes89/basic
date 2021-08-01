@@ -223,3 +223,9 @@ details {
 .preferences-body {
   min-height: 80vh;
 }
+
+/* Profile */
+.profile div img {
+  width: 200px;
+  height: 200px;
+}
