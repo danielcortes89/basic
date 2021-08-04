@@ -34,6 +34,15 @@ export default class ProfileComponent extends Component {
                         <li>Basketball</li>
                         <li>Soccer</li>
                     </ul>
+                    <div>
+                        <section>
+                            <h3>Foods</h3>
+                            <ul>
+                                <li>Japanese</li>
+                                <li>Mexican</li>
+                            </ul>
+                        </section>
+                    </div>
                 </div>
                 <form>
                     <input type="number" value={40}/>

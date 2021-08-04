@@ -146,6 +146,7 @@ details {
   background: black;
   color: var(--main);
   padding: 2rem;
+  min-height: 90vh;
 }
 
 .login form h3 {
