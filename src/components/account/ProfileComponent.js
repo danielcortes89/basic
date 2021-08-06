@@ -26,14 +26,8 @@ export default class ProfileComponent extends Component {
                         <h3>This is where we could put some kind of geolocation info.</h3>
                     </div>
                 </div>
-                <div>
-                    <h2>Then we can have particulars about the individual</h2>
-                    <h3>Your favorites:</h3>
-                    <h4>Sports</h4>
-                    <ul>
-                        <li>Basketball</li>
-                        <li>Soccer</li>
-                    </ul>
+                
+                    
                     <div className="prof-options">
                         <section>
                             <h3>Foods</h3>
@@ -57,7 +51,7 @@ export default class ProfileComponent extends Component {
                             </ul>
                         </section>
                     </div>
-                </div>
+                
                 <form>
                     <input type="number" value={40}/>
                     <select name="unit">
