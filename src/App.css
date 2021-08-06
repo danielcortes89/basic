@@ -248,3 +248,16 @@ details {
   width: 200px;
   height: 200px;
 }
+
+.prof-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (min-width: 576px){
+  .prof-options {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}

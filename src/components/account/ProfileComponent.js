@@ -34,12 +34,26 @@ export default class ProfileComponent extends Component {
                         <li>Basketball</li>
                         <li>Soccer</li>
                     </ul>
-                    <div>
+                    <div className="prof-options">
                         <section>
                             <h3>Foods</h3>
                             <ul>
                                 <li>Japanese</li>
                                 <li>Mexican</li>
+                            </ul>
+                        </section>
+                        <section>
+                            <h3>Activities</h3>
+                            <ul>
+                                <li>Music</li>
+                                <li>Arts</li>
+                            </ul>
+                        </section>
+                        <section>
+                            <h3>Entertinment</h3>
+                            <ul>
+                                <li>Parks</li>
+                                <li>hobbies</li>
                             </ul>
                         </section>
                     </div>
