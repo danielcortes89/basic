@@ -31,24 +31,24 @@ export default class ProfileComponent extends Component {
                     <div className="prof-options">
                         <section>
                             <h3>Foods</h3>
-                            <ul>
-                                <li>Japanese</li>
-                                <li>Mexican</li>
-                            </ul>
+                           
+                                <span>Japanese</span>
+                                <span>Mexican</span>
+                            
                         </section>
                         <section>
                             <h3>Activities</h3>
-                            <ul>
-                                <li>Music</li>
-                                <li>Arts</li>
-                            </ul>
+                           
+                                <span>Music</span>
+                                <span>Arts</span>
+                            
                         </section>
                         <section>
                             <h3>Entertinment</h3>
-                            <ul>
-                                <li>Parks</li>
-                                <li>hobbies</li>
-                            </ul>
+                            
+                                <span>Parks</span>
+                                <span>hobbies</span>
+                            
                         </section>
                     </div>
                 
