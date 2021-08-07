@@ -9,6 +9,7 @@ import Register from './components/account/RegisterComponent'
 import Profile from './components/account/ProfileComponent'
 
 import './App.css';
+import './components.css'
 
 // Basic routing - No High Level State
 

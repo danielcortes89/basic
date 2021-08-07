@@ -1,0 +1,61 @@
+/* Profile */
+.profile {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .profile div {
+    border: 2px solid black;
+  }
+  
+  .profile .intro-card {
+    display: flex;
+    
+  }
+  
+  .profile .intro-card div {
+    flex: 1;
+  }
+  
+  .profile div img {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .prof-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .prof-options section ul {
+    list-style: none;
+    padding: none;
+  }
+
+  /* Login info */
+
+.login {
+    background: black;
+    color: var(--main);
+    padding: 2rem;
+    min-height: 90vh;
+  }
+  
+  .login form h3 {
+    text-align: center;
+  }
+  
+  .login form  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  
+  @media screen and (min-width: 576px){
+    .prof-options {
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+  }
