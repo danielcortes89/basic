@@ -6,31 +6,7 @@
   --text: white;
 }
 
-/* HEADER */
-.header {
-  background: var(--accent);
-  color: white;
-  padding: 3rem;
-  display: flex;
-  align-items: center;
-  /* margin-bottom: 3rem; */
-}
 
-.header a {
-  color: white;
-  text-decoration: none;
-  margin-right: 10px;
-}
-
-/* Landing component */
-.land {
-  text-align: center;
-  background: var(--black);
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
 
 /* This was my best effort, use the svg you made */
 #logo {
